@@ -145,5 +145,146 @@ namespace DBMediateka.Models
             }
             return list;
         }
+
+        public List<SongAlbum> GetAllSongAlbum()
+        {
+            List<SongAlbum> list = new List<SongAlbum>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM _song_album", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new SongAlbum()
+                        {                            
+                            _songID = reader.GetInt32("_songID"),
+                            _albumID = reader.GetInt32("_albumID"),
+                            _track_no = reader.GetString("_track_no")
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<Album> GetAllAlbum()
+        {
+            List<Album> list = new List<Album>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM _album", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new Album()
+                        {
+                            _id = reader.GetInt32("_id"),
+                            _title = reader.GetString("_title"),
+                            _year = reader.GetString("_year"),
+                            _artistID = reader.GetInt32("_artistID")
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<SongArtist> GetAllSongArtist()
+        {
+            List<SongArtist> list = new List<SongArtist>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM _song_artist", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new SongArtist()
+                        {
+                            _songID = reader.GetInt32("_songID"),
+                            _artistID = reader.GetInt32("_artistID")
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<Song> GetAllSong()
+        {
+            List<Song> list = new List<Song>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM _song", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new Song()
+                        {
+                            _id = reader.GetInt32("_id"),
+                            _title = reader.GetString("_title")
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<SongGenre> GetAllSongGenre()
+        {
+            List<SongGenre> list = new List<SongGenre>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM _song_genre", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new SongGenre()
+                        {
+                            _songID = reader.GetInt32("_songID"),
+                            _genreID = reader.GetInt32("_genreID")
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<Genre> GetAllGenre()
+        {
+            List<Genre> list = new List<Genre>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM _genre", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new Genre()
+                        {
+                            _id = reader.GetInt32("_id"),
+                            _name = reader.GetString("_name")
+                        });
+                    }
+                }
+            }
+            return list;
+        }
     }
 }

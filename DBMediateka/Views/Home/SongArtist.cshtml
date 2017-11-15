@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DBMediateka.Models.SongArtist>
+@{
+    ViewBag.Title = "Song Artist";
+}
+
+<table class="table table-bordered">
+    <tr class="active">
+        <th>Song ID</th>
+        <th>ArtistID</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._songID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._artistID)
+            </td>
+        </tr>
+    }
+</table>

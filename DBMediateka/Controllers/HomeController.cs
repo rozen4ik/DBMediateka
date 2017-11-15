@@ -59,6 +59,41 @@ namespace DBMediateka.Controllers
             return View(context.GetAllLike());
         }
 
+        public IActionResult SongAlbum()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllSongAlbum());
+        }
+
+        public IActionResult Album()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllAlbum());
+        }
+
+        public IActionResult SongArtist()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllSongArtist());
+        }
+
+        public IActionResult Song()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllSong());
+        }
+
+        public IActionResult SongGenre()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllSongGenre());
+        }
+
+        public IActionResult Genre()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllGenre());
+        }
 
         public IActionResult Error()
         {
