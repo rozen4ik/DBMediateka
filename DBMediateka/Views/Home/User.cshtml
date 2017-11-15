@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DBMediateka.Models.User>
+@{
+    ViewBag.Title = "User";
+}
+
+<table class="table table-bordered">
+    <tr class="active">
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Sex</th>
+        <th>Birthdate</th>
+        <th>CityID</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._first_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._last_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._birth_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._cityID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._password)
+            </td>
+        </tr>
+    }
+</table>

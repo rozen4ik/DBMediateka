@@ -1,0 +1,26 @@
+﻿@model IEnumerable<DBMediateka.Models.City>
+@{
+    ViewBag.Title = "City";
+}
+
+<table class="table table-bordered">
+    <tr class="active">
+        <th>ID</th>
+        <th>Name</th>
+        <th>CountryID</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._countryID)
+            </td>
+        </tr>
+    }
+</table>

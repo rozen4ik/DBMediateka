@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DBMediateka.Models.Like>
+@{
+    ViewBag.Title = "Like";
+}
+
+<table class="table table-bordered">
+    <tr class="active">
+        <th>UserID</th>
+        <th>SongID</th>
+        <th>Score</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._userID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._songID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._date)
+            </td>
+        </tr>
+    }
+</table>

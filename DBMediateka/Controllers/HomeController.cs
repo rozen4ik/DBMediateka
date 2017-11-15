@@ -29,6 +29,37 @@ namespace DBMediateka.Controllers
             return View();
         }
 
+        public IActionResult Country()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllCountry());
+        }
+
+        public IActionResult Artist()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllArtist());
+        }
+
+        public IActionResult City()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllCity());
+        }
+
+        public IActionResult User()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllUser());
+        }
+
+        public IActionResult Like()
+        {
+            DbMediatekaContext context = HttpContext.RequestServices.GetService(typeof(DBMediateka.Models.DbMediatekaContext)) as DbMediatekaContext;
+            return View(context.GetAllLike());
+        }
+
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
