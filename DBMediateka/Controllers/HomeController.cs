@@ -17,14 +17,7 @@ namespace DBMediateka.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Работу выполнил студент группы 1514(1) Азаров Илья";
 
             return View();
         }
